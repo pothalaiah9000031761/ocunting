@@ -1,0 +1,30 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+
+        <div class="signup-form">
+            <form #updatecustomerForm="ngForm" (ngSubmit)="updatecustomerGroup(updatecustomerForm.value)">
+                <h2>Update </h2>
+                <hr>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="customer group name" name="groupName"
+                            id="groupName" ngModel="{{this.customerGroupName}}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg">update</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

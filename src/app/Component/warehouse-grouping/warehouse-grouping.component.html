@@ -1,0 +1,118 @@
+ 
+ <div id="wrapper">
+  <app-side-bar></app-side-bar>
+  <div id="page-wrapper" class="gray-bg">
+      <app-header></app-header>
+
+<form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+    <!-- Form elements goes here --><div class="content_box">
+  
+    <div class="right_bar ">
+        <!-- <button >Group Selected Warehouses </button> -->
+        <input type="submit" value="Create Group" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+        	<div class="tab-content ">
+		<div class="tab-pane fade show active" id="lorem" role="tabpanel">
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Warehouse Name</th>
+        <th>House No</th>
+        <th>Address Line</th>
+        <th>State</th>
+        <th>Land Mark</th>
+        <th>Zipcode</th>
+        <!-- <th>Select</th>
+        <th>Select</th> -->
+        <th>Select</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let warehouse of Warehouses; let i =index">
+        <td>{{warehouse.warehouseName}}</td>        
+        <td>{{warehouse.address.houseNo}}</td>        
+        <td>{{warehouse.address.addressLine1}}</td>
+        <td>{{warehouse.address.state}}</td>      
+        <td>{{warehouse.address.landMark}}</td>
+        <td>{{warehouse.address.zipCode}}</td>
+
+        <!-- <td class='text-center'  [routerLink]="['/warehouseUpdate']" [queryParams]="{id: warehouse.warehouseCode}"><a ><i class="fa fa-pencil-square-o"
+          aria-hidden="true"></i> Update</a></td>
+          <td class='text-center'><a (click)="deletewarehouse(warehouse.warehouseCode)"><i class="fa fa-pencil-square-o"
+            aria-hidden="true"></i> Delete</a></td> -->
+            <td class='text-center'><input type="checkbox" [value]="warehouse.warehouseName" (change)="onCheckboxChange($event)"  ></td>
+        <!-- <td class='text-center'><a [routerLink]="['/warehouseUpdate']" [state]="{'data':['konda']}"><i class="fa fa-pencil-square-o"
+          aria-hidden="true"></i> Update</a></td> -->
+          <!-- <td class='text-center'><a [routerLink]="['/warehouseDelete']"><i class="fa fa-pencil-square-o"
+            aria-hidden="true"></i> Delete</a></td> -->
+   
+ 
+         
+      </tr>
+      
+    </tbody>
+
+  </table>
+		</div>
+
+            
+	</div>
+    </div>
+</div>
+
+<!-- <table>
+    <tr *ngFor="let names of warehousenames; let i =index">
+        <td>{{i+1}}</td>
+        <td>{{names}}</td>
+    </tr>
+</table> -->
+
+
+ <div class="container">
+   
+   
+  
+  
+   
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+      
+        <div class="modal-content">
+          <div class="modal-header">
+              <h4>Ware House Names</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body">
+
+            <div class="form-group">
+                <label for="createWareHouseGroup">Enter WareHouse Group Name</label><br/>
+                <input type="text" id="createWareHouseGroup" name="createWareHouseGroup" #createWareHouseGroup matInput>
+                
+             </div>
+
+
+             <div>
+            <ul start="1" *ngFor="let names of warehousenames">
+                <li>{{names}}</li>
+            </ul>
+        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success"  (click)="createWGroup(createWareHouseGroup.value)">Save</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+
+
+ 
+</form>
+  </div>
+ </div>

@@ -1,0 +1,52 @@
+ 
+ <div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+<!-- <div class="button">
+    <span class="costCenterAdd" [routerLink]="['/costCenterAdd']">
+    <button type="button" class="btn btn-outline-primary ">Cost Center Add</button>
+    </span>
+</div> -->
+
+<div class="container">
+  <!-- <div class="scrollbar"> -->
+    <!-- Cost center data -->
+      <table class="table table-bordered" >
+      <thead>
+        <tr>
+          <!-- <th scope="col">Id</th> -->
+          <th scope="col">Cost Center Name</th>
+          <th scope="col">Cost Center Code</th> 
+          <th scope="col">Phone Number</th>
+          <th scope="col">Address</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody class="tbody" >
+        <tr *ngFor="let costcentermodel of Costcentermodel.cost; let i = index">
+          <!-- <th scope="row">{{costcentermodel._id}}</th> -->
+          <td>{{costcentermodel.costCenterName}}</td>
+          <td>{{costcentermodel.costCenterCode}}</td>
+          <td>{{costcentermodel.phoneNumber}}</td>
+          <td>{{costcentermodel.address}}</td>
+          
+          <td class="text-center edit-block">
+            <span class="edit" [routerLink]="['/costCenterUpdate']" 
+            [queryParams]="{id: costcentermodel.id}">
+              <button type="button" > <i class="fa fa-pencil"></i> </button>
+            </span>
+          </td>
+          <td>
+            <span class="delete" (click)="deleteCostCenter(costcentermodel)">
+              <button type="button" > <i class="fa fa-trash" aria-hidden="true"></i> </button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <!-- </div> -->
+  </div>
+    </div>
+ </div>

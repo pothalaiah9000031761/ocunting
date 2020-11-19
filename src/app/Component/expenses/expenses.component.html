@@ -1,0 +1,31 @@
+
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+
+<div class="container">
+    
+    <!-- Expenses data -->
+    <table class="expensestable" >
+      <thead>
+        <tr> 
+          <!-- <th scope="col">Id</th> -->
+          <th scope="col" class="th">Expenses Id</th>
+          <th scope="col" class="th">Expenses Name</th>
+          <th scope="col" class="th">Expenses Amount</th>
+          <th scope="col" class="th">Expenses Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let expensesmodel of Expensesmodel.expences ; let i = index">
+          <!-- <th scope="row">{{expensesmodel._id}}</th> -->
+          <td class="td">{{expensesmodel.expencesId}}</td>
+          <td class="td">{{expensesmodel.expencesName}}</td>
+          <td class="td">{{expensesmodel.expencesAmount}}</td>
+          <td class="td">{{expensesmodel.expencesDate}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    </div></div>

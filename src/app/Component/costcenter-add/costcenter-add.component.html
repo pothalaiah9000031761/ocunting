@@ -1,0 +1,109 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 costCenter">
+                <!-- cost center form -->
+                <div class="card-body">
+                    <form [formGroup]="costCenterForm" (ngSubmit)="onSubmit()">
+
+                        <div class="form-row ">
+                            <div class="col-md-6">
+                                <label>Cost Center Name<span class="required">*</span></label>
+                                <input type="text" formControlName="costCenterName" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && myForm.costCenterName.errors }" />
+
+                                <div *ngIf="submitted && myForm.costCenterName.errors" class="invalid-feedback">
+                                    <div *ngIf="myForm.costCenterName.errors.required">Cost Center Name is required
+                                    </div>
+                                    <div *ngIf="myForm.costCenterName.errors.minlength">Cost Center Name must be at
+                                        least 3 characters</div>
+                                    <div *ngIf="myForm.costCenterName.errors.maxlength">Cost center should not exceed 25
+                                        characters</div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                            <input class="form-control" type="text" formControlName="phoneNumber"
+                                [ngClass]="{ 'is-invalid': submitted && myForm.phoneNumber.errors }" maxlength="10">
+                            <div *ngIf="submitted && myForm.phoneNumber.errors" class="invalid-feedback">
+                                <div *ngIf="myForm.phoneNumber.errors.required">Phone Number is required</div>
+                                <!-- <div ng-if="!myForm.myInput.$valid">Phone number must be 10 digits</div> -->
+
+                                <div *ngIf="myForm.phoneNumber.errors.minlength">Phone number must be 10 digits</div>
+                                <div *ngIf="myForm.phoneNumber.errors.maxlength">Phone number should not exceede 10
+                                    digits</div>
+                                <div *ngIf="myForm.phoneNumber.errors.pattern">Phone Number is invalid</div>
+                            </div>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="col-md-6">
+                                <label>Cost Center Code<span class="required">*</span></label>
+                            <input type="text" formControlName="costCenterCode" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && myForm.costCenterCode.errors }" />
+
+                            <div *ngIf="submitted && myForm.costCenterCode.errors" class="invalid-feedback">
+                                <div *ngIf="myForm.costCenterCode.errors.required">Cost Center Code is required</div>
+                                <div *ngIf="myForm.costCenterCode.errors.minlength">Cost Center Code must be at least 3
+                                    characters</div>
+                                <div *ngIf="myForm.costCenterCode.errors.maxlength">Cost center Code should not exceed
+                                    25 characters</div>
+                            </div>
+
+
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                <label>Address<span class="required">*</span></label>
+                            <input type="text" formControlName="address" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && myForm.address.errors }" />
+
+                            <div *ngIf="submitted && myForm.address.errors" class="invalid-feedback">
+                                <div *ngIf="myForm.address.errors.required">Cost Center address is required</div>
+                                <div *ngIf="myForm.address.errors.minlength">Cost Center address must be at least 3
+                                    characters</div>
+                                <div *ngIf="myForm.address.errors.maxlength">Cost center address should not exceed 25
+                                    characters</div>
+                            </div>
+                            </div>
+
+                            
+                            </div>
+
+          
+
+                        <div class="form-row form-group ocount">
+                            <div class="text-center col-md-12 col-lg-12 col-xs-6 col-sm-12">
+                                <button class="btn btn-success btn-md col-md-3 " type="submit">Save</button>
+                                <button class="btn btn-success btn-md col-md-3 btn-danger save"
+                                    type="reset">Cancel</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+
+
+
+
+
+                
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

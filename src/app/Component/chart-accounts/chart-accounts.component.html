@@ -1,0 +1,31 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+
+
+        <div class="container">
+  
+            <p *ngIf="Chartofaccountsmodel.statusCode == 404" class="no-data text-center">There are no accounts added yet!</p>
+          
+              <!-- Chart of Accounts data -->
+              <table class="charttable" *ngIf="Chartofaccountsmodel.statusCode == 200" >
+                <thead>
+                  <tr> 
+                    <!-- <th scope="col">Id</th> -->
+                    <th scope="col" class="th">Account Type Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let chartofaccountsmodel of Chartofaccountsmodel.accountTypes ; let i = index">
+                    <!-- <th scope="row">{{costcentermodel._id}}</th> -->
+                    <td class="td">{{chartofaccountsmodel.accountTypeName}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+
+    </div>
+</div>

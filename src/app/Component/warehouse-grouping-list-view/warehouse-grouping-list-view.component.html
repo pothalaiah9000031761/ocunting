@@ -1,0 +1,45 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+
+<div class="conatiner">
+        <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  
+      <thead>
+        <tr>
+          <th class="th-sm">Group Id</th>
+  
+          <th class="th-sm">Warehouse Group Name</th>
+          <!-- <th class="th-sm">GroupCreated On</th> -->
+          <th class="th-sm">List Of Warehouse Group</th>
+          <th class="th-sm">Action</th>
+  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of allWareHouseGroupData; let i =index">
+          <td>{{data.groupId}}</td>
+          <td>{{data.warehouseGroupName}}</td>
+  
+          <td>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#demo">
+              <i class="fa fa-bars"></i> &nbsp;Warehouses in Group</button>
+            <div id="demo" class="collapse">
+              <ul *ngFor="let d of data.warehousesInGroups">
+                <li>{{d.warehouseName}}</li>
+              </ul>
+  
+            </div>
+          </td>
+          <td class='text-center'><button class="btn btn-sm btn-danger" (click)="deletewarehouseGroup(data.groupId)">Delete</button>
+          </td>
+  
+        </tr>
+  
+      </tbody>
+  
+    </table>
+  </div>
+    </div>
+</div>

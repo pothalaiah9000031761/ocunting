@@ -1,0 +1,23 @@
+p {
+    padding-top: 30px;
+    padding-left: 250px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.save {
+  margin-left: 10px;
+}
+.ocount{
+  margin-top: 10px;
+ 
+}

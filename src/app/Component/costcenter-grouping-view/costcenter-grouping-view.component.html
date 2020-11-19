@@ -1,0 +1,43 @@
+
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+      <app-header></app-header>
+
+<div class="conatiner">
+
+    <table class="table table-bordered">
+     <thead>
+       <tr>
+         <th>Group Id</th>
+         <th>Cost Center Group Name</th>
+         <!-- <th>CostCenterName</th>
+         <th>CostCenterCode</th>
+         <th>PhoneNumber</th>
+         <th>Address</th> -->
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let costcentermodel of allCostCenterGroupData; let i =index">
+         <td>{{costcentermodel.costGroupId}}</td>
+         <td>{{costcentermodel.costGroupName}}</td>
+         <!-- <td>{{costcentermodel.costcenters.costCenterName}}</td>
+         <td>{{costcentermodel.costCenterCode}}</td>        
+         <td>{{costcentermodel.phoneNumber}}</td>        
+         <td>{{costcentermodel.address}}</td> -->
+ 
+         <!-- <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Warehouses in Group</button> -->
+         <!-- <div id="demo" class="collapse">
+            <ul *ngFor="let d of data.warehousesInGroups">
+                <li>{{d.warehouseName}}</li>
+            </ul>
+         </div> -->
+       </tr>
+     </tbody>
+   </table>
+
+ </div>
+
+
+ </div>
+</div>

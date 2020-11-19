@@ -1,0 +1,231 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+
+        <!-- customer form   -->
+        <div class="card-body">
+            <div class="cotainer">
+                <form [formGroup]="addCustomerForm" (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="firstName">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.firstName.errors.required">First Name is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="MIDDEL NAME">Middle Name <span class="required"></span></label>
+                                <input class="form-control" type="text">
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="lastName">
+                                <!-- error -->
+
+
+                                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.lastName.errors.required"> Last Name is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="email">Email <span class="required">*</span></label>
+                                <input class="form-control" type="email" formControlName="email">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required"> Email is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="phone">Phone <span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="phone">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                    <div *ngIf="f.phone.errors.required"> Phone is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="company">Company <span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="company">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                                    <div *ngIf="f.company.errors.required"> Company is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="displayNameAs">Display Name <span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="displayNameAs">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.displayNameAs.errors" class="invalid-feedback">
+                                    <div *ngIf="f.displayNameAs.errors.required"> Company is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="fax">Fax <span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="fax">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.fax.errors" class="invalid-feedback">
+                                    <div *ngIf="f.fax.errors.required"> Company is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="gstRegistrationType">Gst Registration Type <span
+                                        class="required">*</span></label>
+                                <div>
+                                    <select id="gstRegistrationType" class="form-control" type="text"
+                                        formControlName="gstRegistrationType">
+                                        <option value="" disabled>--Gst Registration Type--</option>
+                                        <option>Gst Registered</option>
+                                        <option>Gst Unregistered</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="address">Address <span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="address">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                                    <div *ngIf="f.address.errors.required"> Address is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="taxInfo">Tax Info <span class="required">*</span></label>
+                                <div>
+                                    <select id="taxInfo" class="form-control" type="text" formControlName="taxInfo">
+                                        <option value="" disabled>--Tax Info--</option>
+                                        <option>Tax Reg. No.</option>
+                                        <option>CST reg. no.</option>
+                                        <option>PAN No.</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="city">City<span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="city">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city.errors.required"> City is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="state">State<span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="state">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                    <div *ngIf="f.state.errors.required"> State is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="pincode">Pincode<span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="pincode">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+                                    <div *ngIf="f.pincode.errors.required"> City is required
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+
+                            <div class="form-group">
+                                <label for="notes">Notes<span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="notes">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.notes.errors" class="invalid-feedback">
+                                    <div *ngIf="f.notes.errors.required"> City is required
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="notes">Tax Info number<span class="required">*</span></label>
+                                <input class="form-control" type="text" formControlName="taxInfoNo">
+                                <!-- error -->
+                                <div *ngIf="submitted && f.taxInfoNo.errors" class="invalid-feedback">
+                                    <div *ngIf="f.taxInfoNo.errors.required"> Tax Info number
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="notes">Upload File</label>
+                                <input class="form-control" type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style=margin-left:300px;>
+                        <button class="btn btn-success btn-lg col-md-2 save" type="submitted">Save</button>
+                        <button class="btn btn-lg col-md-2 btn-danger" type="reset">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

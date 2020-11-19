@@ -1,0 +1,65 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Buying Price</th>
+                        <th scope="col">Selling Price</th>
+                        <th scope="col">Hsn Code</th>
+                        <th scope="col">Cost Centers</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Product Description</th>
+                        <th scope="col">Tax Rates</th>
+                        <th scope="col">Date Of Buying</th>
+                        <th scope="col">Date Of Selling</th>
+                        <th scope="col">Update </th>
+                        <th scope="col">Delete </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let productmastermodel of Productmastermodel.productMasterProduct ; let i = index">
+
+                        <td>{{productmastermodel.productName}}</td>
+                        <td>{{productmastermodel.buyingPrice}}</td>
+                        <td>{{productmastermodel.sellingPrice}}</td>
+                        <td>{{productmastermodel.hsnCode}}</td>
+                        <td>{{productmastermodel.costCenters}}</td>
+                        <td>{{productmastermodel.description}}</td>
+                        <td>{{productmastermodel.productDescription}}</td>
+                        <td>{{productmastermodel.taxRates}}</td>
+                        <td>{{productmastermodel.dateOfBuying}}</td>
+                        <td>{{productmastermodel.dateOfSelling}}</td>
+
+                        <!-- <td class="text-center edit-block">
+            <span class="edit" [routerLink]="['/inventoryUpdate/', productmastermodel.productId]" 
+            [queryParams]="{id: productmastermodel.productId}">
+              <button type="button" class="btn btn-success btn-sm"> Edit </button>
+            </span>
+            <span class="delete" (click)="deleteProductMaster(productmastermodel)">
+              <button type="button" class="btn btn-danger btn-sm"> Delete </button>
+            </span>
+          </td> -->
+                        <td class="text-center edit-block">
+                            <span class="edit" [routerLink]="['/productMasterUpdate']"
+                                [queryParams]="{id: productmastermodel.productId}">
+                                <button type="button" > <i class="fa fa-pencil"></i> </button>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="delete" (click)="deleteProductMaster(productmastermodel)">
+                                <button type="button" > <i class="fa fa-trash" aria-hidden="true"></i> </button>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <app-footer></app-footer>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <img src="assets/img/logo.png" alt="Onpassive" class="main-logo img-responsive">
+                <div class="logo-element">
+                    <img src="assets/img/small-logo.png" alt="Onpassive" class="img-responsive">
+                </div>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa fa-money"></i> <span class="nav-label">Accountant</span>
+                     <span
+                        class="fa arrow"></span>
+                    </a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="#">Invoice</a></li>
+                    <li><a href="#">Customer</a></li>
+                    <li><a href="#">Receipt</a></li>
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Sales </span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="#">Invoice</a></li>
+                    <li>
+                        <a href="#" id="damian">Customer<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a [routerLink]="['/customer-add']">Customer Add</a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['/customer-view']">Customer View</a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['/customergroup']">Customer Grouping</a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['/customergroupingview']" >Customer Grouping View</a>
+                            </li>
+
+
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Receipt</a></li>
+
+
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Purchase</span> <span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="#">P Invoice</a></li>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Vendors <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li><a [routerLink]="['/vendorAdd']">Vendor Add</a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['/vendorView']">Vendor View</a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['/creditlimit']">Credit Days</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-cog"></i> <span class="nav-label">Product &amp; Services</span>
+                    <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="#">Inventory <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li><a [routerLink]="['/productmaster-add']">Product Master Add</a></li>
+                            <li><a [routerLink]="['/productmaster-view']">Product Master View</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Non Inventory</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-suitcase"></i> <span class="nav-label">Cost Center</span> <span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a  [routerLink]="['/costCenterAdd']">Cost Center Add</a></li>
+                    <li><a  [routerLink]="['/costCenterView']">Cost Center View</a></li>
+                    <li><a [routerLink]="['/costCenterGrouping']">Cost Center Grouping </a></li>
+                    <li><a [routerLink]="['/costCenterGroupingView']">Cost Center Grouping View </a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-bar-chart"></i> <span class="nav-label">Chart Of Accounts</span> <span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a [routerLink]="['/chartAccount']">Chart Of Accounts</a></li>
+                    <li><a [routerLink]="['/expense']">Expenses</a></li>
+                    <li><a href="#">Account Payable</a></li>
+                    <li><a href="#">Account Receivable</a></li>
+                    <li><a href="#">Income</a></li>
+                    <li><a href="#">Liability</a></li>
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#"><i class="fa fa-industry"></i> <span class="nav-label">Warehouse</span> <span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a [routerLink]="['/register']">Warehouse Add</a></li>
+                    <li><a [routerLink]="['/warehouselist']">Warehouse View</a></li>
+                    <!-- <li><a [routerLink]="['/warehouseUpdate']">Warehouse Update</a></li> -->
+                    <li><a [routerLink]="['/warehouseGrouping']">Warehouse Grouping</a></li>
+                    <li><a [routerLink]="['/WHouseGroupListView']">Warehouse Grouping View</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#"><i class="fa fa-file-text"></i> <span class="nav-label">Reports</span></a> </li>
+            <li><a href="#"><i class="fa fa-tachometer"></i> <span class="nav-label">Dashboard</span></a> </li>
+
+
+        </ul>
+
+    </div>
+</nav>

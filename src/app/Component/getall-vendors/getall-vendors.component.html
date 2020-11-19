@@ -1,0 +1,108 @@
+<div class="content_box">
+
+    <div class="right_bar ">
+        <div class="tab-content ">
+            <div class="tab-pane fade show active" id="lorem" role="tabpanel">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>FirstName</th>
+                            <th>DisplayName</th>
+                            <th>MobileNumber</th>
+                            <th>State</th>
+                            <th>Company</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vendor of Vendors; let i =index">
+                            <td>{{vendor.firstName}}</td>
+                            <td>{{vendor.email}}</td>
+                            <td>{{vendor.phone}}</td>
+                            <td>{{vendor.state}}</td>
+                            <td>{{vendor.company}}</td>
+
+
+                            <td class='text-center' data-toggle="modal" data-target=".bd-example-modal-lg"><a><i
+                                        class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    Moredetails</a></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>SalesAmount</th>
+                        <th>SalesDate</th>
+                        <th>CreditDays</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let sales of customerArray; let i =index">
+                        <td>{{sales.salesAmount}}</td>
+                        <td>{{sales.salesDate}}</td>
+                        <td>{{sales.creditDays}}</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">CreditLimt</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Credit Limit</h5>
+                    
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()" >
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">CustomerId</label>
+              <input type="text" class="form-control" formControlName="creditlimitId"  >
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button  type="submitted"  class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+         <span style="color:green"> {{this.creditLimit}}</span>
+        </div>
+     
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <label for="recipient-name" class="col-form-label">Creditlimit</label>
+      <div class="modal-content">
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  

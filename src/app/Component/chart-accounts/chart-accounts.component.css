@@ -1,0 +1,24 @@
+p {
+    padding-top: 30px;
+    padding-left: 350px;
+}
+
+.charttable, th, td {
+    border: 1px solid black;
+    border-style: double;
+    margin-top: 30px;
+    margin-left: 180px;
+    padding-left: 50px;
+    padding-right: 50px;
+    white-space: normal;
+}
+
+.th {
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

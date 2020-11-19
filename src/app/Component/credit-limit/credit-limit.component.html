@@ -1,0 +1,196 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+
+
+        <div class="content_box">
+            <div class="right_bar ">
+                <div class="tab-content ">
+                    <div class="tab-pane fade show active" id="lorem" role="tabpanel">
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile Number</th>
+                                    <th>State</th>
+                                    <th>Company</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let vendor of Vendors; let i =index">
+                                    <td>{{vendor.firstName}}</td>
+                                    <td>{{vendor.email}}</td>
+                                    <td>{{vendor.phone}}</td>
+                                    <td>{{vendor.state}}</td>
+                                    <td>{{vendor.company}}</td>
+
+                                    <td class='text-center' data-toggle="modal" data-target=".bd-example-modal-lg"><a>
+                                            <button (click)="moreDetails(vendor.sales)"> More details</button></a></td>
+
+                                    <!-- <p *ngFor="let sale of vendor.sales;">
+                                    {{sale.salesAmount}}
+                                    {{sale.salesDate}}
+                                    {{sale.creditDays}}
+                                 </p> -->
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>SalesAmount</th>
+                                <th>SalesDate</th>
+                                <th>CreditDays</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let d of testData">
+                                <td>{{d.salesAmount}}</td>
+                                <td>{{d.salesDate}}</td>
+                                <td>{{d.creditDays}}</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@mdo" (click)="closeX()">Credit Limt</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Credit Limit</h5>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="vendorForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Customer Id</label>
+                                <input type="text" id="creditlimitId" class="form-control" 
+                                    formControlName="creditlimitId">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submitted" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                        <span style="color:green" id="creditlimit"> {{this.creditLimit}}</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <label for="recipient-name" class="col-form-label">Credit Limit</label>
+                <div class="modal-content">
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <button style="margin-left: 70px;" type="button" class="btn btn-primary" data-toggle="modal"
+            data-target="#creditlimitUpdate" data-whatever="@mdo">Credit Limit Update</button>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="creditlimitUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Credit Amount </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form [formGroup]="creditupdateform" (ngSubmit)="onSubmitCreditUpdate()">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Customer Id</label>
+                                <input type="text" class="form-control" id="CustmerId" formControlName="customerId">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Credit Amount</label>
+                                <input type="text" class="form-control" id="CreditA" formControlName="creditamount">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submitted" class="btn btn-primary">update</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <button style="margin-left: 70px;" type="button" class="btn btn-primary" data-toggle="modal"
+            data-target="#updatecreditdays">
+            Update Credit days
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="updatecreditdays" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Update Credit Days</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form [formGroup]="creditupdatedaysform" (ngSubmit)="onSubmitUpdatedays()">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Sales Id</label>
+                                <input type="text" class="form-control" formControlName="salesId">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Credit Days</label>
+                                <input type="text" class="form-control" formControlName="creditDays">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submitted" class="btn btn-primary">update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<body>
+
+    <section class="container-fluid">
+        <div class="row">
+
+            <img src="assets/img/logo.png" class="img-responsive onpaasive-logo pull-right">
+
+        </div>
+    </section>
+
+    <section class="container-fluid">
+        <div class="row">
+
+
+            <img src="assets/img/occounting.png" alt="Occounting" class="img-responsive occounting-logo">
+        </div>
+    </section>
+    <div class="container-fluid">
+        <div class="container">
+
+
+            <div class="row login-content">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 login-text">
+                    <h3>Life Is Like Accounting, Everything Must Be Balanced.
+
+
+                    </h3>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 login">
+                    <h1>Login</h1>
+
+                    <form [formGroup]="SubmitLoginForm" (ngSubmit)="login(myForm.value)" #myForm="ngForm">
+                        <div class="form-group">
+
+
+                            <label for="email">User name <span class="required"><b>*</b></span></label>
+                            <input class="form-control" type="text" formControlName="email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors}">
+                            <!-- error -->
+                            <div class="invalid-feedback" *ngIf="submitted && f.email.errors?.required">
+                                Email is required.
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="password">Password <span class="required"><b>*</b></span></label>
+                            <input class="form-control" type="password" formControlName="password"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors}">
+                            <!-- error -->
+                            <div class="invalid-feedback" *ngIf="submitted && f.password.errors?.required">
+                                Password is required.
+                            </div>
+                        </div>
+
+
+
+                        <div class="row form-group login-btn">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <button type="submit" class="btn btn-info">Login</button>
+                                </div>
+
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> <input type="checkbox"> Remember Me
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> <label><a href="#"
+                                        class="pull-right">Forget password ?</a></label></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

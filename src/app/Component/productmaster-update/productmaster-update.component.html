@@ -1,0 +1,154 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+        <div class="row justify-content-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="card-body">
+                            <form [formGroup]="productMasterUpdateForm" (ngSubmit)="onSubmit()">
+
+                                <div class="form-row ">
+                                    <div class="col-md-6">
+                                        <label for="productName">ProductName <span class="required">*</span></label>
+                                        <input class="form-control" type="text" formControlName="productName"
+                                            minlength="3" maxlength="50"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.productName.errors }">
+
+                                        <div *ngIf="submitted && myForm.productName.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.productName.errors.required">ProductName is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="description">Description <span class="required">*</span></label>
+                                        <input class="form-control" type="text" formControlName="description"
+                                            minlength="3" maxlength="10000"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.description.errors }">
+                                        <div *ngIf="submitted && myForm.description.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.description.errors.required">Description is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-6">
+                                        <label for="hsnCode">HsnCode <span class="required">*</span></label>
+                                        <input class="form-control" type="text" formControlName="hsnCode" minlength="1"
+                                            maxlength="10"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.hsnCode.errors }">
+                                        <div *ngIf="submitted && myForm.hsnCode.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.hsnCode.errors.required">hsnCode is required</div>
+                                            <!-- <div *ngIf="myForm.hsnCode.errors.minlength">hsnCode must be 1 digits</div> -->
+                                            <div *ngIf="myForm.hsnCode.errors.maxlength">hsnCode should not exceede 10
+                                                digits</div>
+                                            <div *ngIf="myForm.hsnCode.errors.pattern">hsnCode is invalid</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="taxRates">TaxRates<span class="required">*</span></label>
+                                        <input class="form-control" type="text" formControlName="taxRates" minlength="1"
+                                            maxlength="10"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.taxRates.errors }">
+                                        <div *ngIf="submitted && myForm.taxRates.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.taxRates.errors.required">TaxRates is required</div>
+                                            <div *ngIf="myForm.taxRates.errors.maxlength">TaxRates should not exceede 10
+                                                digits</div>
+                                            <div *ngIf="myForm.taxRates.errors.pattern">TaxRates is invalid</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="sellingPrice">SellingPrice <span class="required">*</span></label>
+                                        <input class="form-control" type="text" formControlName="sellingPrice"
+                                            minlength="1" maxlength="10"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.sellingPrice.errors }">
+                                        <div *ngIf="submitted && myForm.sellingPrice.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.sellingPrice.errors.required">SellingPrice is required
+                                            </div>
+                                            <div *ngIf="myForm.sellingPrice.errors.maxlength">SellingPrice should not
+                                                exceede 10 digits</div>
+                                            <div *ngIf="myForm.sellingPrice.errors.pattern">SellingPrice is invalid
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="buyingPrice">BuyingPrice <span class="required">*</span></label>
+                                        <input class="form-control" type="text" formControlName="buyingPrice"
+                                            minlength="1" maxlength="10"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.buyingPrice.errors }">
+                                        <div *ngIf="submitted && myForm.buyingPrice.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.buyingPrice.errors.required">BuyingPrice is required
+                                            </div>
+                                            <div *ngIf="myForm.buyingPrice.errors.maxlength">buyingPrice should not
+                                                exceede
+                                                10 digits</div>
+                                            <div *ngIf="myForm.buyingPrice.errors.pattern">buyingPrice is invalid</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="dateOfSelling">DateOfSelling <span class="required">*</span></label>
+                                        <input class="form-control" type="date" formControlName="dateOfSelling"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.dateOfSelling.errors }">
+                                        <div *ngIf="submitted && myForm.dateOfSelling.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.dateOfSelling.errors.required">DateOfSelling is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="dateOfBuying">DateOfBuying <span class="required">*</span></label>
+                                        <input class="form-control" type="date" formControlName="dateOfBuying"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.dateOfBuying.errors }">
+                                        <div *ngIf="submitted && myForm.dateOfBuying.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.dateOfBuying.errors.required">DateOfBuying is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label for="costCenters">CostCenters <span class="required">*</span></label>
+                                        <input class="form-control" type="text" formControlName="costCenters"
+                                            minlength="3" maxlength="10000"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.costCenters.errors }">
+                                        <div *ngIf="submitted && myForm.costCenters.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.costCenters.errors.required">CostCenters is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="productDescription">ProductDescription <span
+                                                class="required">*</span></label>
+                                        <input class="form-control" type="text" formControlName="productDescription"
+                                            minlength="3" maxlength="10000"
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.productDescription.errors }">
+                                        <div *ngIf="submitted && myForm.productDescription.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="myForm.productDescription.errors.required">ProductDescription is
+                                                required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row form-group ocount">
+                                    <div class="text-center col-md-12 col-lg-12 col-xs-6 col-sm-12">
+                                        <button class="btn btn-success btn-md col-md-3 " type="submit" >Update</button>
+                                        <button class="btn btn-success btn-md col-md-3 btn-danger"
+                                            (click)="cancel()">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

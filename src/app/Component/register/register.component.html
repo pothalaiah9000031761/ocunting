@@ -1,0 +1,207 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+        <app-header></app-header>
+
+        <main class="my-form">
+            <div class="cotainer">
+                <form name="my-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="warehouse_name" class=" col-form-label text-md-right">Warehouse
+                                Name<b>*</b></label>
+
+                            <input type="text" formControlName="warehouseName" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.warehouseName.errors}" minlength="4" />
+                            <div *ngIf="submitted && f.warehouseName.errors" class="invalid-feedback">
+                                <div *ngIf="f.warehouseName.errors.required">Warehouse Name is required
+                                </div>
+                                <div *ngIf="f.warehouseName.errors.cannotContainSpace">Warehouse can not
+                                    contain space</div>
+                                <div *ngIf="f.warehouseName.errors.minlength">Name must be at least 6
+                                    characters long. </div>
+                                    <div *ngIf="registerForm.hasError('whitespace')">Please enter valid text</div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <label for="h_no" class=" col-form-label text-md-right">House No<b>*</b></label>
+                            <div class="">
+                                <input type="text" id="h_no" class="form-control" name="h-no" formControlName="houseNo"
+                                    [ngClass]="{ 'is-invalid': submitted && f.houseNo.errors }">
+                                <div *ngIf="submitted && f.houseNo.errors" class="invalid-feedback">
+                                    <div *ngIf="f.houseNo.errors.required">House No  is required
+                                    </div>
+                                    <div *ngIf="f.houseNo.errors.cannotContainSpace">House No can not
+                                        contain space</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="adress_line1" class=" col-form-label text-md-right">Address-line1<b>*</b></label>
+                            <div class="">
+                                <input type="text" id="adress_line1" class="form-control" name="adressine1"
+                                    formControlName='addressLine1'
+                                    [ngClass]="{ 'is-invalid': submitted && f.addressLine1.errors }">
+
+                                <div *ngIf="submitted && f.addressLine1.errors" class="invalid-feedback">
+                                    <div *ngIf="f.addressLine1.errors.required">Address1 Line is required
+                                    </div>
+                                    <div *ngIf="f.addressLine1.errors.cannotContainSpace">Address Line1 can
+                                        not contain space</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+
+                            <label for="adress_line2" class=" col-form-label text-md-right">Address-line2<b>*</b></label>
+                            <div class="">
+                                <input type="text" id="adress_line2" class="form-control" name="adressline2"
+                                    formControlName='addressLine2'
+                                    [ngClass]="{ 'is-invalid': submitted && f.addressLine2.errors }">
+
+                                <div *ngIf="submitted && f.addressLine2.errors" class="invalid-feedback">
+                                    <div *ngIf="f.addressLine2.errors.required">Address Line2 is required
+                                    </div>
+                                    <div *ngIf="f.addressLine2.errors.cannotContainSpace">Address Line2 can
+                                        not contain space</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="land_mark" class=" col-form-label text-md-right"> Land Mark<b>*</b></label>
+                            <div class="">
+                                <input type="text" id="land_mark" class="form-control" name="landMark"
+                                    formControlName='landMark'
+                                    [ngClass]="{ 'is-invalid': submitted && f.landMark.errors }">
+                                <div *ngIf="submitted && f.landMark.errors" class="invalid-feedback">
+                                    <div *ngIf="f.landMark.errors.required">Land Mark is required</div>
+                                    <div *ngIf="f.landMark.errors.cannotContainSpace">LandMark can not
+                                        contain space</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="country" class="col-form-label text-md-right">Country<b>*</b></label>
+
+                            <div class="">
+                                <select id="country" class="form-control" formControlName="country"
+                                    [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+
+
+                                    <option value="" disabled>Choose Country Name</option>
+                                    <option>India</option>
+                                    <option>Srilanka</option>
+                                    <option>Bangladesh</option>
+                                </select>
+
+                                <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+                                    <div *ngIf="f.country.errors.required">Country is required</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="state" class=" col-form-label text-md-right">State<b>*</b></label>
+
+                            <div class="">
+                                <select id="state" class="form-control" formControlName="state"
+                                    [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+
+                                    <option value="" disabled>State Name</option>
+                                    <option>Andhra pradesh</option>
+                                    <option>Telangana</option>
+                                    <option>Karnataka</option>
+                                    <option>Kerala</option>
+                                    <option>Tamilnadu</option>
+                                </select>
+
+                                <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                                    <div *ngIf="f.state.errors.required">State is required</div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="city" class=" col-form-label text-md-right">City<b>*</b></label>
+
+                            <div class="">
+                                <select id="city" class="form-control" formControlName="city"
+                                    [ngClass]="{ 'is-invalid': submitted && f.city.errors }">
+                                    <option value="" disabled>City Name</option>
+                                    <option>Hyderabad</option>
+                                    <option>Banglore</option>
+                                    <option>Chennai</option>
+                                </select>
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city.errors.required">City is required</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="zip_code" class=" col-form-label text-md-right">Zipcode<b>*</b></label>
+                            <div class="">
+                                <input type="number" id="zip_code" class="form-control" formControlName="zipCode"
+                                    [ngClass]="{ 'is-invalid': submitted && f.zipCode.errors }" type="number"
+                                    onKeyPress="if(this.value.length==10) return false;" [ngClass]="{ 'is-invalid': submitted && f.zipCode.errors}">
+                                <div *ngIf="submitted && f.zipCode.errors" class="invalid-feedback">
+                                    <div *ngIf="f.zipCode.errors.required">Zipcode must be 10 characters
+                                        long</div>
+                                    <div *ngIf="f.zipCode.errors.minlength">Zipcode must be 10 characters
+                                        long. </div>
+                                    <div *ngIf="f.zipCode.errors.pattern">ZipCode must be 10 characters
+                                        long. </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6  offset-md-4">
+                            <button type="submitted" class="btn btn-primary" style="margin-left: -60px;">Register</button>
+                        </div>
+                        <!-- <div class="text-center col-md-12 col-lg-12 col-xs-6 col-sm-12">
+                            <button class="btn btn-success btn-md col-md-2 save" type="submit">Save</button>
+                            <button class="btn btn-success btn-md col-md-2 btn-danger "
+                                type="reset">Cancel</button>
+                        </div> -->
+                    </div>               
+                 </form>
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+</div>

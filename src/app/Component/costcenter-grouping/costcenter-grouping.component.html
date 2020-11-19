@@ -1,0 +1,107 @@
+<div id="wrapper">
+    <app-side-bar></app-side-bar>
+    <div id="page-wrapper" class="gray-bg">
+      <app-header></app-header>
+
+
+<form [formGroup]="form" (ngSubmit)="submitForm()" novalidate>
+    <!-- Form elements goes here -->
+    <div class="content_box">
+  
+      <div class="right_bar ">
+        <!-- <button >Group Selected Warehouses </button> -->
+        <input type="submit" id="creatCostGroupId" value="Create Group" class="btn btn-info btn-lg" data-toggle="modal"
+          data-target="#myModal">
+        <div class="tab-content ">
+          <div class="tab-pane fade show active" id="lorem" role="tabpanel">
+  
+            <table class="table table-bordered view">
+              <thead>
+                <tr>
+                  <th>Cost Center Name</th>
+                  <th>Cost Center Code</th>
+                  <th>Phone Number</th>
+                  <th>Address</th>
+                  <!-- <th>Select</th>
+        <th>Select</th> -->
+                  <th>Select</th>
+                </tr>
+              </thead>
+              <tbody>
+  
+                <tr formArrayName="costCenterNew"
+                  *ngFor="let customer of selectedCostCenterArray.controls; let i = index;">
+                  <td>{{checkboxesDataList[i].costCenterName}}</td>
+                  <td>{{checkboxesDataList[i].costCenterCode}}</td>
+                  <td>{{checkboxesDataList[i].phoneNumber}}</td>
+                  <td>{{checkboxesDataList[i].address}}</td>
+  
+                  <td class='text-center'>
+                    <input type="checkbox" [formControlName]="i" id="check{{i}}" >
+                  </td>
+                </tr>
+  
+              </tbody>
+  
+            </table>
+          </div>
+  
+  
+        </div>
+      </div>
+    </div>
+  
+  
+  
+    <div class="container">
+  
+      <!-- Trigger the modal with a button -->
+  
+  
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+  
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Cost Center Group Names</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+  
+              <div class="form-group">
+                <label for="createCostCenterGroup">Enter create Cost Center Name</label><br />
+                <input type="text" id="createCostCenterGroup" name="createCostCenterGroup" #createCostCenterGroup
+                  matInput>
+  
+              </div>
+  
+  
+              <div>
+                <!-- <span class="badge badge-pill badge-success"
+                  *ngFor="let customer of selectedCostCenters">{{customer.costCenterName}}</span> -->
+                  <ul *ngFor="let customer of selectedCostCenters">
+                    <li>{{customer.costCenterName}}</li>
+                    <li>{{customer.costCenterCode}}</li>
+                    <li>{{customer.phoneNumber}}</li>
+                    <li>{{customer.address}}</li>
+                  </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" (click)="createWGroup(createCostCenterGroup.value)">Create Group</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  
+  
+  </form>
+
+  </div>    </div>  

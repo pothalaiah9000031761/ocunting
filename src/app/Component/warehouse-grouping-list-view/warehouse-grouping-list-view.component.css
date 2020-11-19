@@ -1,0 +1,43 @@
+* .mat-header-cell{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: whitesmoke;
+    color: black;
+  }
+  
+  .mat-row:nth-child(even){
+      background-color:whitesmoke;
+      } */
+  
+  
+  
+  body {
+      margin: 0;
+      padding: 2rem;
+    }
+    
+    table {
+      text-align: left;
+      position: relative;
+      border-collapse: collapse; 
+    }
+    th, td {
+      padding: 0.25rem;
+    }
+    
+    th {
+      background: white;
+      position: sticky;
+      top: 0; /* Don't forget this, required for the stickiness 
+      box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);*/
+    }
+    td, th {
+      text-align: center;
+      vertical-align: middle;
+    }
+  
+    button{
+      text-align: center;
+      vertical-align: middle;
+    }
+  
