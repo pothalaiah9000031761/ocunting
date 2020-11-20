@@ -31,24 +31,22 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6">
-                                        <label for="email">EMAIL<span class="required"><b>*</b></span></label> 
-                                         <input class="form-control" type="email" formControlName="email"
+                                        <label for="email">EMAIL<span class="required"><b>*</b></span></label>
+                                        <input class="form-control" type="email" formControlName="email"
                                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                                       
-                                            [ngClass]="{ 'is-invalid': submitted && f.email.errors ||f.email.touched && f.email.errors }"
-                                            >
-                                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                                <div *ngIf="f.email.errors.required">Please enter a valid Email
-                                                </div>                                             
-                                                <div *ngIf="f.email.errors.pattern">please entere a valid Email
-                                                </div>
+                                            [ngClass]="{ 'is-invalid': submitted && f.email.errors ||f.email.touched && f.email.errors }">
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Please enter a valid Email
                                             </div>
-                                    
+                                            <div *ngIf="f.email.errors.pattern">please entere a valid Email
+                                            </div>
+                                        </div>
+
                                         <!-- <div class="invalid-feedback"
                                             *ngIf="submitted && myForm.email.errors?.required">
                                             Email is required.
                                         </div> -->
-                                        
+
 
                                     </div>
                                     <div class="col-md-6">
@@ -69,20 +67,12 @@
                                             onKeyPress="if(this.value.length==10) return false;" formControlName="phone"
                                             [ngClass]="{ 'is-invalid': submitted && f.phone.errors}">
                                         <!-- error -->
-
-
-                                        
-                                        <div class="invalid-feedback"
-                                            *ngIf="submitted && myForm.phone.errors?.required">
-                                            Phone Number is required and it should be 10 digits.
+                                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                            <div *ngIf="f.phone.errors.required">Please ente a valid PhoneNumber
+                                            </div>
+                                            <div *ngIf="f.phone.errors.pattern">Please enter a valid PhoneNumber
+                                            </div>
                                         </div>
-                                        
-                                        <!-- <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
-                                            <div class="invalid-feedback" *ngIf="submitted && f.phone.errors?.required"> Phone Number is required and it should be 10 digits. </div>
-                                                <div class="invalid-feedback"  *ngIf="submitted && f.phone.errors.minlength">Cost Center Name must be at  least 3 characters</div>
-                                        </div> -->
-
-
                                     </div>
                                     <div class="col">
                                         <label for="fax">FAX<span class="required"><b>*</b></span></label>
@@ -177,8 +167,7 @@
                                 </div>
                                 <div class="form-row form-group ocount">
                                     <div class="text-center col-md-12 col-lg-12 col-xs-6 col-sm-12">
-                                        <button class="btn btn-success btn-md col-md-3 "
-                                            type="submitted" >Save</button>
+                                        <button class="btn btn-success btn-md col-md-3 " type="submitted">Save</button>
                                         <button class="btn btn-success btn-md col-md-3 btn-danger save"
                                             type="reset">Cancel</button>
                                     </div>
@@ -189,6 +178,6 @@
                 </div>
             </div>
         </div>
-     
+
     </div>
 </div>

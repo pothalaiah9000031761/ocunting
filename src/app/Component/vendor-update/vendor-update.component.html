@@ -14,7 +14,8 @@
                                         <input class="form-control" type="text" formControlName="firstName"
                                             [ngClass]="{ 'is-invalid': submitted && myForm.firstName.errors}">
                                         <!-- error -->
-                                        <div class="invalid-feedback" *ngIf="submitted && myForm.firstName.errors?.required">
+                                        <div class="invalid-feedback"
+                                            *ngIf="submitted && myForm.firstName.errors?.required">
                                             FirstName is required.
                                         </div>
                                     </div>
@@ -37,11 +38,12 @@
                                         <label for="email">EMAIL<span class="required"><b>*</b></span></label>
                                         <input class="form-control" type="email" formControlName="email"
                                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                                            [ngClass]="{ 'is-invalid': submitted && myForm.email.errors}">
-                                        <!-- error -->
-                                        <div class="invalid-feedback"
-                                            *ngIf="submitted && myForm.email.errors?.required">
-                                            Email is required.
+                                            [ngClass]="{ 'is-invalid': submitted && myForm.email.errors ||myForm.email.touched && myForm.email.errors }">
+                                        <div *ngIf="submitted && myForm.email.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.email.errors.required">Please enter a valid Email
+                                            </div>
+                                            <div *ngIf="myForm.email.errors.pattern">Please entere a valid Email
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -62,11 +64,15 @@
                                             onKeyPress="if(this.value.length==10) return false;" formControlName="phone"
                                             [ngClass]="{ 'is-invalid': submitted && myForm.phone.errors}">
                                         <!-- error -->
-                                        <div class="invalid-feedback"
-                                            *ngIf="submitted && myForm.phone.errors?.required">
-                                            Phone Number is required.
+                                        <div *ngIf="submitted && myForm.phone.errors" class="invalid-feedback">
+                                            <div *ngIf="myForm.phone.errors.required">Please ente a valid PhoneNumber
+                                            </div>
+                                            <div *ngIf="myForm.phone.errors.pattern">Please enter a valid PhoneNumber
+                                            </div>
                                         </div>
                                     </div>
+
+
                                     <div class="col">
                                         <label for="fax">FAX<span class="required"><b>*</b></span></label>
                                         <input class="form-control" type="text" formControlName="fax"
@@ -140,7 +146,7 @@
                                             type="number" formControlName="pincode"
                                             [ngClass]="{ 'is-invalid': submitted && myForm.pincode.errors}">
                                         <!-- error -->
-                                        <div class="invalid-feedback"s
+                                        <div class="invalid-feedback" s
                                             *ngIf="submitted && myForm.pincode.errors?.required">
                                             Pincode is required.
                                         </div>
@@ -160,10 +166,9 @@
                                 </div>
                                 <div class="form-row form-group ocount">
                                     <div class="text-center col-md-12 col-lg-12 col-xs-6 col-sm-12">
-                                        <button class="btn btn-success btn-md col-md-3 "
-                                            type="submit">Update</button>
+                                        <button class="btn btn-success btn-md col-md-3 " type="submit">Update</button>
                                         <button class="btn btn-success btn-md col-md-3 btn-danger save"
-                                        (click) ="cancel()">Cancel</button>
+                                            (click)="cancel()">Cancel</button>
                                     </div>
                                 </div>
                             </form>

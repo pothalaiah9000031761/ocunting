@@ -9,7 +9,8 @@ import { costcenterservice } from '../../services/costcenterservice';
 export class CostcenterGroupingViewComponent implements OnInit {
 
   allCostCenterGroupData:any;    
-
+  p: Number = 1;
+  count: Number = 5;
   constructor(public http: costcenterservice) { }
 
   ngOnInit(): void {
