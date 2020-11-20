@@ -19,11 +19,6 @@ export class WarehouseGroupingComponent implements OnInit {
   createWareHouseName:any
   warehouseGroupNames:any;
   //Data: any = [];
-
-
- 
-
-
   constructor(private apiService: RegisterService,
     private fb: FormBuilder,
     private router:Router,
@@ -34,10 +29,6 @@ export class WarehouseGroupingComponent implements OnInit {
           })
 
   }
-
-  
-
-
   mainForm() {
     this.form = this.fb.group({
       // customerId: ['', [Validators.required]],

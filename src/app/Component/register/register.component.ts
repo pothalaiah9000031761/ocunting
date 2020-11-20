@@ -85,7 +85,7 @@ export class RegisterComponent implements OnInit {
     }else{
       this.toastr.success('Registered Sucessfully');
       this.router.navigate(['/warehouselist']);
-    }
+    }   
 
   
   }, (error) => {

@@ -25,7 +25,7 @@
         </tr>
       </thead>
       <tbody class="tbody" >
-        <tr *ngFor="let costcentermodel of Costcentermodel.cost; let i = index">
+        <tr *ngFor="let costcentermodel of Costcentermodel.cost | paginate: { itemsPerPage: count, currentPage: p }  ">
           <!-- <th scope="row">{{costcentermodel._id}}</th> -->
           <td>{{costcentermodel.costCenterName}}</td>
           <td>{{costcentermodel.costCenterCode}}</td>
@@ -47,6 +47,9 @@
       </tbody>
     </table>
   <!-- </div> -->
+  </div>
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
     </div>
  </div>

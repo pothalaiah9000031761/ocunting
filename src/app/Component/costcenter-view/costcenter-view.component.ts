@@ -14,6 +14,9 @@ import Swal from 'sweetalert2';
 export class CostcenterViewComponent implements OnInit {
   Costcentermodel: any = [];
   // Costcentermodels: Object;
+  
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(
     private apiService: costcenterservice,
