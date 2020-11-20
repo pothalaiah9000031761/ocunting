@@ -31,15 +31,25 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6">
-                                        <label for="email">EMAIL<span class="required"><b>*</b></span></label>
-                                        <input class="form-control" type="email" formControlName="email"
+                                        <label for="email">EMAIL<span class="required"><b>*</b></span></label> 
+                                         <input class="form-control" type="email" formControlName="email"
                                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                                            [ngClass]="{ 'is-invalid': submitted && f.email.errors}">
-                                        <!-- error -->
-                                        <div class="invalid-feedback"
+                                       
+                                            [ngClass]="{ 'is-invalid': submitted && f.email.errors ||f.email.touched && f.email.errors }"
+                                            >
+                                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                <div *ngIf="f.email.errors.required">Please enter a valid Email
+                                                </div>                                             
+                                                <div *ngIf="f.email.errors.pattern">please entere a valid Email
+                                                </div>
+                                            </div>
+                                    
+                                        <!-- <div class="invalid-feedback"
                                             *ngIf="submitted && myForm.email.errors?.required">
                                             Email is required.
-                                        </div>
+                                        </div> -->
+                                        
+
                                     </div>
                                     <div class="col-md-6">
                                         <label for="company">COMPANY <span class="required"><b>*</b></span></label>
