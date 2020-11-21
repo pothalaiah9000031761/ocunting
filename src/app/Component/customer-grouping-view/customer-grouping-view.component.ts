@@ -39,7 +39,7 @@ export class CustomerGroupingViewComponent implements OnInit {
       (data)=>{
         Swal.fire({
           title: 'Are you sure?',
-          text: "You won't be able to revert this!",
+          text: "",
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',

@@ -9,6 +9,9 @@ import { expensesservice } from 'src/app/services/expensesservice';
 export class ExpensesComponent implements OnInit {
 
   Expensesmodel:any = [];
+  
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private apiService: expensesservice) { 
     this.updateExpenses();

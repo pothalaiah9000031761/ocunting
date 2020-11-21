@@ -216,7 +216,7 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="notes">Upload File</label>
-                                <input class="form-control" type="file">
+                                <input class="form-control" type="file" formControlName="files" multiple (change)="upload($event.target.files)">
                             </div>
                         </div>
                     </div>

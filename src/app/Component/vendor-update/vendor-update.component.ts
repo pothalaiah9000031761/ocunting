@@ -64,7 +64,7 @@ export class VendorUpdateComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required]],
       company: ['', Validators.required],
-      phone: ['', Validators.required],
+      phone: ['', [Validators.required,Validators.minLength, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       fax: ['', Validators.required],
       displayNameAs: ['', Validators.required],
       gstRegistrationType: ['', Validators.required],
@@ -117,6 +117,7 @@ export class VendorUpdateComponent implements OnInit {
         // console.log(data['message']);
         this.sucessMessage = data;
 
+        console.log(data);
         if (this.sucessMessage.statusCode == "412") {
 
          

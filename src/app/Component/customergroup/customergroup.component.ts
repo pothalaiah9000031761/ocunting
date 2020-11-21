@@ -20,7 +20,9 @@ import { CustomerGroup } from '../CustomerGroup';
 export class CustomergroupComponent implements OnInit {
   form: FormGroup;
   customerGroupForm: FormGroup;
-  submitted = false;
+  submitted = false;  
+  p: Number = 1;
+  count: Number = 5;
   customerGroupModel: CustomerGroup = new CustomerGroup();
   get selectedCustomersArray() {
     return this.form.controls.customers as FormArray;

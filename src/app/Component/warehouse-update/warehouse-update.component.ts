@@ -47,7 +47,7 @@ export class WarehouseUpdateComponent implements OnInit {
         state: [data1.address.state, Validators.required],
         city: [data1.address.city, Validators.required],
         landMark: [data1.address.landMark, Validators.required],
-        zipCode: [data1.address.zipCode, Validators.required],
+        zipCode: [data1.address.zipCode, Validators.required,],
         
       });
     });

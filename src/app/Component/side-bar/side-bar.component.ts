@@ -14,6 +14,7 @@ export class SideBarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
   }
   redirectTo(path: any) {
     this.router.navigateByUrl('/' + path);

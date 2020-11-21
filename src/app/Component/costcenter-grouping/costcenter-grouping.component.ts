@@ -27,6 +27,9 @@ export class CostcenterGroupingComponent implements OnInit {
   jsonObj = {};
   costCenterJson1: any = {}
   closeResult: string;
+  
+  p: Number = 1;
+  count: Number = 5;
 
   get selectedCostCenterArray() {
     return this.form.controls.costCenterNew as FormArray;

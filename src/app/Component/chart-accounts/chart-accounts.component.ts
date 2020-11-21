@@ -11,7 +11,9 @@ import { chartofaccountsservice } from '../../services/chartofaccountsservice';
 })
 export class ChartAccountsComponent implements OnInit {
 
-  Chartofaccountsmodel:any = [];
+  Chartofaccountsmodel:any = [];  
+  p: Number = 1;
+  count: Number = 5;
 
   constructor(private apiService: chartofaccountsservice) {
     this.updateCostCenter();

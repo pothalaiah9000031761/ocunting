@@ -11,6 +11,8 @@ import Swal from'sweetalert2';
 })
 export class ProductmasterViewComponent implements OnInit {
 
+  p: Number = 1;
+  count: Number = 5;
   Productmastermodel:any = [];
    constructor(private apiService: productmasterservice,
               private toastr: ToastrService,
