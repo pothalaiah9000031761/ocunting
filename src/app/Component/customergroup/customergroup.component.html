@@ -19,7 +19,7 @@
           </ul>
 
           <button type="submit" class="btn btn-primary pull-right custmmarg" data-toggle="modal"
-            data-target="#customergroup">group customers</button>
+            data-target="#customergroup">Group customers</button>
         </div>
       </form>
     </div>
@@ -47,7 +47,8 @@
               <div class="form-group">
                 <label for="comment">Customers names:</label>
                 <span class="badge badge-pill badge-success"
-                  *ngFor="let customer of selectedCustomers">{{customer.firstName}} {{customer.lastName}}</span>
+                  *ngFor="let customer of selectedCustomers | paginate: { itemsPerPage: count, currentPage: p } ">{{customer.firstName}}
+                  {{customer.lastName}}</span>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -60,6 +61,8 @@
         </div>
       </div>
     </div>
-
+    <div class="text-right">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
   </div>
 </div>

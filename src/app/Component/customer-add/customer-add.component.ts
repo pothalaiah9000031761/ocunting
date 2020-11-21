@@ -43,6 +43,7 @@ export class CustomerAddComponent implements OnInit {
       state: ['', [Validators.required]],
       pincode: ['', [Validators.required]],
       notes: ['', [Validators.required]],
+      files: ['', [Validators.required]]
       // description: ['', [Validators.required]],
     })
   }
@@ -56,6 +57,7 @@ export class CustomerAddComponent implements OnInit {
   onSubmit() {
     console.log("called")
     this.submitted = true;
+    
     // if (!this.addCustomerForm.valid) {
     //   console.log(this.addCustomerForm.valid)
     //   return false;
@@ -72,7 +74,7 @@ export class CustomerAddComponent implements OnInit {
             this.toastr.error(this.errorMessages[i]);
           }
 
-        }else if(res['statusCode'] == 403){
+        } else if (res['statusCode'] == 403) {
           this.errorMessages = res['message'];
           this.toastr.error(this.errorMessages);
         } else {
@@ -88,6 +90,15 @@ export class CustomerAddComponent implements OnInit {
         console.log(error);
       });
     //   }
+  }
+  selectFile;
+  upload(data) {
+    console.log(data);
+    this.selectFile = data;
+    console.log("this.selectFile:::::" + this.selectFile);
+    for (let i = 0; i < this.selectFile.length; i++) {
+      console.log(this.selectFile[i])
+    }
   }
 
 }

@@ -87,7 +87,7 @@ import { CustomerUpdateComponent } from './Component/customer-update/customer-up
     CustomerViewComponent,
     CustomerUpdateComponent,
 
-
+ 
   ],
   imports: [
     BrowserModule,

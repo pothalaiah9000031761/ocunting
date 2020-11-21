@@ -30,7 +30,7 @@
               <tbody>
   
                 <tr formArrayName="costCenterNew"
-                  *ngFor="let customer of selectedCostCenterArray.controls; let i = index;">
+                  *ngFor="let customer of selectedCostCenterArray.controls | paginate: { itemsPerPage: count, currentPage: p }   let i = index;">
                   <td>{{checkboxesDataList[i].costCenterName}}</td>
                   <td>{{checkboxesDataList[i].costCenterCode}}</td>
                   <td>{{checkboxesDataList[i].phoneNumber}}</td>
@@ -104,4 +104,12 @@
   
   </form>
 
-  </div>    </div>  
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  </div> 
+   </div>  
+
+
+
+  

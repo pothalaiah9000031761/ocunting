@@ -117,6 +117,7 @@ export class VendorUpdateComponent implements OnInit {
         // console.log(data['message']);
         this.sucessMessage = data;
 
+        console.log(data);
         if (this.sucessMessage.statusCode == "412") {
 
          
